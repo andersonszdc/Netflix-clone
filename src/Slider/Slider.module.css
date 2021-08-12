@@ -1,0 +1,19 @@
+.wrapper {
+    align-items: center;
+    display: inline-flex;
+    margin-top: 50px;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 3rem;
+    right: 0px;
+    align-self: center;
+}
+
+.arrow2 {
+    position: absolute;
+    font-size: 3rem;
+    left: 0px;
+    align-self: center;
+}
