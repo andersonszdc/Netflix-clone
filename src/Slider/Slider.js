@@ -8,7 +8,7 @@ import cobraKai from "../Assets/cobra-kai.jpg"
 import lucifer from "../Assets/lucifer.jpg"
 import narcos from "../Assets/narcos.jpg"
 
-const sliderzada = (props) => keyframes`
+const sliderzadaForward = (props) => keyframes`
 from {
     transform: translate(${props.inicial}px)
 }
@@ -17,57 +17,61 @@ to {
 }
 `;
 
-const animation = (props) => css`
-    animation: ${sliderzada} 0.8s ease-in-out;
+const sliderzadaBack = (props) => keyframes`
+from {
+    transform: translate(${props.final - 1275}px)
+}
+to {
+    transform: translate(${props.inicial - 1275}px)
+}
+`;
+
+const animationForward = (props) => css`
+    animation: ${sliderzadaForward} 0.8s ease-in-out;
+`;
+
+const animationBack = (props) => css`
+    animation: ${sliderzadaBack} 0.8s ease-in-out;
 `;
 
 const Sliderzin = styled.div`
     display: inline-flex;
     overflow: hidden;
-    position: fixed;
-    ${props => props.isClicked && animation(props)};
+    
+    ${props => props.isClickedForward && animationForward(props)};
+    ${props => props.isClickedBack && animationBack(props)};
 `;
 
 const Slider = () => {
-
     const slider = useRef()
-    const [isClicked, setIsClicked] = React.useState(false)
+    const [isClickedForward, setIsClickedForward] = React.useState(false)
+    const [isClickedBack, setIsClickedBack] = React.useState(false)
     const [inicial, setInicial] = React.useState(1275)
     const [final, setFinal] = React.useState(0)
 
     function handleClick() {
-
         setInicial(inicial - 1275)
         setFinal(final - 1275)
-
-        console.log(inicial)
-        console.log(final)
-
-        setIsClicked(true)
+        setIsClickedForward(true)
         setTimeout(() => {
-            setIsClicked(false)
+            setIsClickedForward(false)
             slider.current.style.transform = `translate(${final - 1275}px)`
         }, 800);
     }
 
     function handleClick2() {
-
         setInicial(inicial + 1275)
         setFinal(final + 1275)
-
-        console.log(inicial)
-        console.log(final)
-
-        setIsClicked(true)
+        setIsClickedBack(true)
         setTimeout(() => {
-            setIsClicked(false)
+            setIsClickedBack(false)
             slider.current.style.transform = `translate(${final + 1275}px)`
         }, 800);
     }
 
     return (
         <div className={styles.wrapper}>
-            <Sliderzin ref={slider} inicial={inicial} final={final} isClicked={isClicked}>
+            <Sliderzin ref={slider} inicial={inicial} final={final} isClickedForward={isClickedForward} isClickedBack={isClickedBack}>
                 <Cards src={casaPapel}/>
                 <Cards src={cobraKai}/>
                 <Cards src={lucifer}/>
