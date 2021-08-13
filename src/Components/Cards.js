@@ -1,16 +1,21 @@
 import React from 'react'
 import Card from './Card'
-import styles from './Cards.module.css'
+import styled from 'styled-components'
+
+const CardsSingle = styled.div`
+    display: inline-flex;
+    overflow: hidden;
+`;
 
 const Cards = (props) => {
     return (
-        <div className={styles.cards}>
+        <CardsSingle>
             <Card src={props.src}/>
             <Card src={props.src}/>
             <Card src={props.src}/>
             <Card src={props.src}/>
             <Card src={props.src}/>
-        </div>
+        </CardsSingle>
     )
 }
 

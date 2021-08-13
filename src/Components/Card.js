@@ -1,11 +1,21 @@
 import React from 'react'
-import styles from './Card.module.css'
+import styled from 'styled-components'
+
+const CardSingle = styled.div`
+    display: inline-flex;
+    margin-right: 5px;
+
+    .img {
+        width: 250px;
+        border-radius: 10px;
+    }
+`;
 
 const Card = (props) => {
     return (
-        <div className={styles.card}>
-            <img src={props.src} alt="la casa de papel" />
-        </div>
+        <CardSingle>
+            <img className="img" src={props.src} alt="la casa de papel" />
+        </CardSingle>
     )
 }
 

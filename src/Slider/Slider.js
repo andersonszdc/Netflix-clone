@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import styled, { keyframes, css } from 'styled-components';
 import Cards from '../Components/Cards'
-import styles from './Slider.module.css'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import casaPapel from "../Assets/casa-de-papel.jpg"
 import cobraKai from "../Assets/cobra-kai.jpg"
@@ -42,6 +41,26 @@ const Sliderzin = styled.div`
     ${props => props.isClickedBack && animationBack(props)};
 `;
 
+const Wrapper = styled.div`
+    align-items: center;
+    display: inline-flex;
+    margin-top: 15px;
+`
+
+const ArrowForward = styled(IoIosArrowForward)`
+    position: absolute;
+    font-size: 3rem;
+    right: 0px;
+    align-self: center;
+`
+
+const ArrowBack = styled(IoIosArrowBack)`
+    position: absolute;
+    font-size: 3rem;
+    left: 0px;
+    align-self: center;
+`
+
 const Slider = () => {
     const slider = useRef()
     const [isClickedForward, setIsClickedForward] = React.useState(false)
@@ -70,16 +89,16 @@ const Slider = () => {
     }
 
     return (
-        <div className={styles.wrapper}>
+        <Wrapper>
             <Sliderzin ref={slider} inicial={inicial} final={final} isClickedForward={isClickedForward} isClickedBack={isClickedBack}>
                 <Cards src={casaPapel}/>
                 <Cards src={cobraKai}/>
                 <Cards src={lucifer}/>
                 <Cards src={narcos}/>
             </Sliderzin>
-            <IoIosArrowBack onClick={handleClick2} className={styles.arrow2} />
-            <IoIosArrowForward onClick={handleClick} className={styles.arrow} />
-        </div>
+            <ArrowBack onClick={handleClick2}/>
+            <ArrowForward onClick={handleClick}/>
+        </Wrapper>
     )
 }
 
