@@ -3,6 +3,8 @@ import { IoMdArrowDropright } from "react-icons/io"
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import styled from 'styled-components'
 
+const UrlTitle = "https://occ-0-4906-420.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABYrBv7onXUs7wdGSXnys3JMav_bnqDK4YCHGDxMQXkblsTQBTKNp7FHvdpqMIrfFInFoqFJnRxgyPjyiGBHExFGyZ_nW8rNUDdU4T_qeREkaSVNrBayeoqh7J-iye-ipsRPs_fml9oa3LVEYMxIQ7JYQHmrEJbjiaS11iOvClGWX.webp?r=cbf"
+
 const Button1 = styled.button`
     padding: 10px 20px;
     border-radius: 5px;
@@ -21,11 +23,8 @@ const Button2 = styled(Button1)`
     margin-left: 12px;
 `
 
-const Title = styled.div`
-    font-weight: 500;
-    margin-top: 200px;
-    margin-bottom: 50px;
-    font-size: 2rem;
+const Title = styled.img`
+    margin-bottom: 45px;
 `
 
 const Description = styled.p`
@@ -44,7 +43,7 @@ const Title2 = styled.h2`
 const Body = () => {
     return (
         <div>
-            <Title>Título</Title>
+            <Title src={UrlTitle}></Title>
             <Description>Um simples chef de San Francisco é o mais novo entre os inúmeros assassinos escolhidos para evitar que os poderes místicos de Wu caiam em mãos erradas.</Description>
             <div>
                 <Button1>

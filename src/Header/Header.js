@@ -9,6 +9,7 @@ const MainHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
 `;
 
 const LeftHeader = styled.div`

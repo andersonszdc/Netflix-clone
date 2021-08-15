@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 const CardSingle = styled.div`
     display: inline-flex;
-    margin-right: 5px;
+    padding: 0 2px;
+    width: 20%;
 
+    
     .img {
-        width: 250px;
-        border-radius: 10px;
+        width: 100%;
+        border-radius: 7px;
     }
 `;
 

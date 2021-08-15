@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled, { keyframes, css } from 'styled-components';
 import Cards from '../Components/Cards'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
@@ -63,6 +63,10 @@ const ArrowBack = styled(IoIosArrowBack)`
 
 const Slider = () => {
     const slider = useRef()
+    useEffect(() => {
+        const widthSlider = slider.current.clientWidth
+        console.log(widthSlider)
+    }, [])
     const [isClickedForward, setIsClickedForward] = React.useState(false)
     const [isClickedBack, setIsClickedBack] = React.useState(false)
     const [inicial, setInicial] = React.useState(1275)

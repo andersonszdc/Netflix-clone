@@ -10,30 +10,39 @@ const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
   
   body {
     color: white;
     font-family: 'Netflix Sans Regular', sans-serif;
-    background-size: cover;
     overflow-x: hidden;
-    background: black url(${UrlFundo}) no-repeat center;
-    background-size: cover;
+    background-color: #141414;
   }
-`
+`;
 
 const MainApp = styled.div`
-  margin: 10px 30px;
+  padding: 0 4%;
+`
+
+const Background = styled.img`
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 80%, rgba(255,0,0,0) 100%);
 `
 
 function App() {
   return (
     <React.Fragment>
-      <GlobalStyle />
+      <GlobalStyle/>
       <MainApp className="app">
-        <Header />
-        <Body />
-        <Slider />
+        <Background src={UrlFundo} alt="background"/>
+        <Header/>
+        <Body/>
+        <Slider/>
       </MainApp>
     </React.Fragment>
   );

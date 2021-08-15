@@ -3,8 +3,9 @@ import Card from './Card'
 import styled from 'styled-components'
 
 const CardsSingle = styled.div`
-    display: inline-flex;
+    display: block;
     overflow: hidden;
+    width: 1210px;
 `;
 
 const Cards = (props) => {
