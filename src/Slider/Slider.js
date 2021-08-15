@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import styled, { keyframes, css } from 'styled-components';
+import styled from 'styled-components';
 import Cards from '../Components/Cards'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import casaPapel from "../Assets/casa-de-papel.jpg"
@@ -7,38 +7,10 @@ import cobraKai from "../Assets/cobra-kai.jpg"
 import lucifer from "../Assets/lucifer.jpg"
 import narcos from "../Assets/narcos.jpg"
 
-const sliderzadaForward = (props) => keyframes`
-from {
-    transform: translate(${props.inicial}px)
-}
-to {
-    transform: translate(${props.final}px)
-}
-`;
-
-const sliderzadaBack = (props) => keyframes`
-from {
-    transform: translate(${props.final - 1275}px)
-}
-to {
-    transform: translate(${props.inicial - 1275}px)
-}
-`;
-
-const animationForward = (props) => css`
-    animation: ${sliderzadaForward} 0.8s ease-in-out;
-`;
-
-const animationBack = (props) => css`
-    animation: ${sliderzadaBack} 0.8s ease-in-out;
-`;
-
 const Sliderzin = styled.div`
     display: inline-flex;
     overflow: hidden;
-    
-    ${props => props.isClickedForward && animationForward(props)};
-    ${props => props.isClickedBack && animationBack(props)};
+    transition: 0.8s ease-in-out;
 `;
 
 const Wrapper = styled.div`
