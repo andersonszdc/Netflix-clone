@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const CardsSingle = styled.div`
     display: block;
     overflow: hidden;
-    width: 1210px;
+    width: 91vw;
 `;
 
 const Cards = (props) => {

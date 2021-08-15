@@ -38,13 +38,13 @@ const Slider = () => {
     const [inicio, setInicio] = React.useState(0)
 
     function handleClick() {
-        setInicio(inicio - 1275)
-        slider.current.style.transform = `translate(${inicio - 1275}px)`
+        setInicio(inicio - 25)
+        slider.current.style.transform = `translate(${inicio - 25}%)`
     }
 
     function handleClick2() {
-        setInicio(inicio + 1275)
-        slider.current.style.transform = `translate(${inicio + 1275}px)`
+        setInicio(inicio + 25)
+        slider.current.style.transform = `translate(${inicio + 25}%)`
     }
 
     return (
