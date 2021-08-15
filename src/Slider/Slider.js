@@ -3,34 +3,45 @@ import styled from 'styled-components';
 import Cards from '../Components/Cards'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import casaPapel from "../Assets/casa-de-papel.jpg"
-import cobraKai from "../Assets/cobra-kai.jpg"
-import lucifer from "../Assets/lucifer.jpg"
-import narcos from "../Assets/narcos.jpg"
 
 const Sliderzin = styled.div`
-    display: inline-flex;
-    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    overflow-x: visible;
     transition: 0.8s ease-in-out;
 `;
 
 const Wrapper = styled.div`
-    align-items: center;
-    display: inline-flex;
+    display: flex;
+    position: relative;
+    padding: 0 4%;
     margin-top: 15px;
 `
 
 const ArrowForward = styled(IoIosArrowForward)`
     position: absolute;
+    display: flex;
     font-size: 3rem;
+    width: 4%;
     right: 0px;
+    background: rgba(20,20,20,.5);
     align-self: center;
+    z-index: 2;
+    height: 100%;
+    border-radius: 4px;
 `
 
 const ArrowBack = styled(IoIosArrowBack)`
     position: absolute;
+    display: flex;
     font-size: 3rem;
+    width: 4%;
     left: 0px;
+    background: rgba(20,20,20,.5);
     align-self: center;
+    z-index: 2;
+    height: 100%;
+    border-radius: 4px;
 `
 
 const Slider = () => {
@@ -38,24 +49,21 @@ const Slider = () => {
     const [inicio, setInicio] = React.useState(0)
 
     function handleClick() {
-        setInicio(inicio - 25)
-        slider.current.style.transform = `translate(${inicio - 25}%)`
+        setInicio(inicio - 100)
+        slider.current.style.transform = `translate(${inicio - 100}%)`
     }
 
     function handleClick2() {
-        setInicio(inicio + 25)
-        slider.current.style.transform = `translate(${inicio + 25}%)`
+        setInicio(inicio + 100)
+        slider.current.style.transform = `translate(${inicio + 100}%)`
     }
 
     return (
         <Wrapper>
+            <ArrowBack onClick={handleClick2}/>
             <Sliderzin ref={slider}>
                 <Cards src={casaPapel}/>
-                <Cards src={cobraKai}/>
-                <Cards src={lucifer}/>
-                <Cards src={narcos}/>
             </Sliderzin>
-            <ArrowBack onClick={handleClick2}/>
             <ArrowForward onClick={handleClick}/>
         </Wrapper>
     )

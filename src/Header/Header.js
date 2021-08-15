@@ -10,6 +10,7 @@ const MainHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    padding: 0 4%;
 `;
 
 const LeftHeader = styled.div`

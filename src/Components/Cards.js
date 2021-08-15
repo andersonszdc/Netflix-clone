@@ -4,14 +4,17 @@ import styled from 'styled-components'
 
 const CardsSingle = styled.div`
     display: block;
-    overflow: hidden;
-    width: 91vw;
+    overflow: visible;
 `;
 
 const Cards = (props) => {
 
     return (
         <CardsSingle>
+            <Card src={props.src}/>
+            <Card src={props.src}/>
+            <Card src={props.src}/>
+            <Card src={props.src}/>
             <Card src={props.src}/>
             <Card src={props.src}/>
             <Card src={props.src}/>

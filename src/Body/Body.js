@@ -42,7 +42,7 @@ const Title2 = styled.h2`
 
 const Body = () => {
     return (
-        <div>
+        <div style={{padding: "0 4%"}}>
             <Title src={UrlTitle}></Title>
             <Description>Um simples chef de San Francisco é o mais novo entre os inúmeros assassinos escolhidos para evitar que os poderes místicos de Wu caiam em mãos erradas.</Description>
             <div>

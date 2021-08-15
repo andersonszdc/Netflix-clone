@@ -9,7 +9,7 @@ const CardSingle = styled.div`
     
     .img {
         width: 100%;
-        border-radius: 7px;
+        border-radius: 4px;
     }
 `;
 
