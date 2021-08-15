@@ -35,34 +35,21 @@ const ArrowBack = styled(IoIosArrowBack)`
 
 const Slider = () => {
     const slider = useRef()
-    const [isClickedForward, setIsClickedForward] = React.useState(false)
-    const [isClickedBack, setIsClickedBack] = React.useState(false)
-    const [inicial, setInicial] = React.useState(1275)
-    const [final, setFinal] = React.useState(0)
+    const [inicio, setInicio] = React.useState(0)
 
     function handleClick() {
-        setInicial(inicial - 1275)
-        setFinal(final - 1275)
-        setIsClickedForward(true)
-        setTimeout(() => {
-            setIsClickedForward(false)
-            slider.current.style.transform = `translate(${final - 1275}px)`
-        }, 800);
+        setInicio(inicio - 1275)
+        slider.current.style.transform = `translate(${inicio - 1275}px)`
     }
 
     function handleClick2() {
-        setInicial(inicial + 1275)
-        setFinal(final + 1275)
-        setIsClickedBack(true)
-        setTimeout(() => {
-            setIsClickedBack(false)
-            slider.current.style.transform = `translate(${final + 1275}px)`
-        }, 800);
+        setInicio(inicio + 1275)
+        slider.current.style.transform = `translate(${inicio + 1275}px)`
     }
 
     return (
         <Wrapper>
-            <Sliderzin ref={slider} inicial={inicial} final={final} isClickedForward={isClickedForward} isClickedBack={isClickedBack}>
+            <Sliderzin ref={slider}>
                 <Cards src={casaPapel}/>
                 <Cards src={cobraKai}/>
                 <Cards src={lucifer}/>
