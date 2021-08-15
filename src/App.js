@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Body from './Body/Body';
 import Header from './Header/Header';
 import Slider from './Slider/Slider';
@@ -35,10 +35,17 @@ const Background = styled.img`
 `
 
 function App() {
+
+  const CardsRef = useRef();
+
+  useEffect(() => {
+    console.log(0.92 * (CardsRef.current.clientWidth))
+  }, [CardsRef])
+
   return (
     <React.Fragment>
       <GlobalStyle/>
-      <MainApp className="app">
+      <MainApp ref={CardsRef}>
         <Background src={UrlFundo} alt="background"/>
         <Header/>
         <Body/>
