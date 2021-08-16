@@ -19,6 +19,8 @@ const Wrapper = styled.div`
 `
 
 const ArrowForward = styled(IoIosArrowForward)`
+    opacity: 0;
+    transition: 0.15s ease-in-out;
     position: absolute;
     display: flex;
     font-size: 3rem;
@@ -29,9 +31,15 @@ const ArrowForward = styled(IoIosArrowForward)`
     z-index: 2;
     height: 100%;
     border-radius: 4px;
+
+    &:hover {
+        opacity: 1;
+    }
 `
 
 const ArrowBack = styled(IoIosArrowBack)`
+    opacity: 0;
+    transition: 0.15s ease-in-out;
     position: absolute;
     display: flex;
     font-size: 3rem;
@@ -42,6 +50,10 @@ const ArrowBack = styled(IoIosArrowBack)`
     z-index: 2;
     height: 100%;
     border-radius: 4px;
+
+    &:hover {
+        opacity: 1;
+    }
 `
 
 const Slider = () => {

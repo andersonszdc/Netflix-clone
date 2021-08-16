@@ -21,11 +21,22 @@ const LeftHeader = styled.div`
     .img {
         width: 100px;
     }
+
+    @media(max-width: 800px) {
+        font-size: 12px;
+        .img {
+            width: 75px;
+        }  
+    }
 `;
 
 const RightHeader = styled.div`
     display: flex;
     gap: 20px;
+
+    @media(max-width: 800px) {
+        font-size: 12px; 
+    }
 `;
 
 const Header = () => {
@@ -44,7 +55,7 @@ const Header = () => {
                 <div>
                     <FaBell />
                 </div>
-                <div>
+                <div className="perfil">
                     Meu perfil
                 </div>
             </RightHeader>
