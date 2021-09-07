@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import styled from 'styled-components';
 import Cards from '../Components/Cards'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import casaPapel from "../Assets/casa-de-papel.jpg"
 
 const Sliderzin = styled.div`
     display: block;
@@ -74,7 +73,7 @@ const Slider = () => {
         <Wrapper>
             <ArrowBack onClick={handleClick2}/>
             <Sliderzin ref={slider}>
-                <Cards src={casaPapel}/>
+                <Cards/>
             </Sliderzin>
             <ArrowForward onClick={handleClick}/>
         </Wrapper>

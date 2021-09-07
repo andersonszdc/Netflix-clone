@@ -11,6 +11,7 @@ const MainFooter = styled.footer`
 `
 
 const Footer = () => {
+
     return (
         <MainFooter>
             <p>Obs.: este layout é apenas para fins didáticos | <a rel='noreferrer' target="_blank" href="https://github.com/andersonszdc">Andersonszdc</a> :)</p>
